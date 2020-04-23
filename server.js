@@ -1,6 +1,13 @@
-const http=require('http');
-const callbackFile=require('./callback');
-const callback=callbackFile.callBack;
-const server=http.createServer(callback);
+const http = require('http');
+const fs = require('fs');
+const { requestListener } = require('./callback.js');
+const port = 3000;
+const server = http.createServer(requestListener);
 
-server.listen('3000');
+server.listen(port, function(error) {
+    if (error) {
+        console.log('Something went wrong', error)
+    } else {
+        console.log('server listen on port' + port)
+    }
+});
