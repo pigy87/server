@@ -1,0 +1,58 @@
+body {
+    background-color: papayawhip;
+}
+
+#glavni {
+    margin: 0 auto;
+    background-color: gray;
+    border: 1px solid orange;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: seashell;
+    text-align: center;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: seashell;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: seashell;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: flex;
+    -ms-flex-align: center;
+}
+
+button:hover {
+    background-color: green;
+}
+
+#proba {
+    width: 90%;
+    height: 700px;
+    background-color: gray;
+    margin: 10px auto;
+    overflow: scroll;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.files {
+    display: flex;
+}

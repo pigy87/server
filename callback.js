@@ -1,16 +1,28 @@
 const fs = require('fs');
 
-module.export = {
+module.exports = {
     requestListener: (req, res) => {
 
-        fs.readFile('./index.html', 'utf-8', (err, data) => {
+        if (req.url == '/') {
+            req.url = "index.html"
+        }
+
+        fs.readFile('./static/' + req.url, 'utf-8', (err, data) => {
 
             if (err) {
                 res.writeHead(200, { "content-type": "text/html" });
                 res.write(`${err}`);
                 res.end();
             } else {
-                res.writeHead(200, { "content-type": "text/html" });
+
+                if (req.url == "index.html") {
+                    res.writeHead(200, { "content-type": "text/html" });
+                }
+
+                if (req.url == 'stylesheet.css') {
+                    res.writeHead(200, { "content-type": "text/css" });
+                }
+
                 res.write(data);
                 res.end();
             }
